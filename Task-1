@@ -1,1 +1,52 @@
+package practice;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Number_game_task1 {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        Scanner sc = new Scanner(System.in);
+        
+        int maxAttempts = 10;
+        //Users have only 10 attempts to win.
+        System.out.println("NUMBER GAME");
+        System.out.println("Welcomes you to our Game.");
+        System.out.println("You have only 10 attempts,be careful.All the best!!!");
+        
+        boolean playAgain;
+        do{
+        int randNumber = rand.nextInt(100)+1;
+       
+        System.out.println("Enter your guess (1-100):");
+        int attempts = 0;
+        while(attempts < maxAttempts){
+
+        int guessNum = sc.nextInt();
+        attempts++;
+
+        if (guessNum == randNumber) {
+            System.out.println("Correct! you win!");
+            System.out.println("It took you "+ attempts +" attempts.");
+            break;
+        }
+        else if (guessNum > randNumber) {
+            System.out.println("Lower number please.");
+        }
+        else{
+            System.out.println("Higher number please.");
+        }
+        }
+            if (attempts == maxAttempts) {
+                System.out.println("you loosse.");
+            }
+
+        
+            System.out.println("Do you want to play again? (yes/no): ");
+            String playAgainInput = sc.next().toLowerCase();
+            playAgain = playAgainInput.equals("yes");
+        }while(playAgain);
+        System.out.println("Thanks for playing!");
+        sc.close();
+    }
+}
 
