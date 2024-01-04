@@ -1,0 +1,62 @@
+package practice;
+
+import java.util.Scanner;
+
+
+/*
+      STUDENT GRADE CALCULATOR
+      GRADE system --> Average Marks >= 90 --> O
+                                     >= 80 --> A
+                                     >= 70 --> B
+                                     >= 60 --> C
+                                     >= 50 --> D
+                                      < 50 --> F
+ */
+public class Grade_calculator_task2 {
+    public static void main(String[] args) {
+       
+        System.out.println("Enter the marks(0-100) of following subjects:");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("English: ");
+        int mark1 = scan.nextInt();
+        
+        System.out.print("Physics: ");
+        int mark2 = scan.nextInt();
+        
+        System.out.print("Chemistry: ");
+        int mark3 = scan.nextInt();
+        
+        System.out.print("Mathemetics: ");
+        int mark4 = scan.nextInt();
+        
+        System.out.print("Information & technology: ");
+        int mark5 = scan.nextInt();
+        
+        
+        int tot = (mark1 + mark2 + mark3 + mark4 + mark5);
+        
+        double avg = tot/5;
+        
+        char grade = calculateGrade(avg);
+        System.out.println("\nTotal Marks = " + tot);
+        System.out.println("\nAverage Marks = " + avg);
+        
+        System.out.println("\nGRADE = " + grade);
+                
+    }
+        private static char calculateGrade(double avg){
+       if (avg >=90) {
+         return 'O';
+       }else if (avg >=80) {
+         return 'A';
+       }else if (avg >=70) {
+         return 'B';
+       }else if (avg >=60) {
+         return 'C';
+       }else if (avg >=50) {
+         return 'D';
+       }else{
+         return 'F';
+       }
+    }
+}
